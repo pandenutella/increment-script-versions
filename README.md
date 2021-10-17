@@ -128,56 +128,56 @@ Increment script versions via commandline using batch
    c_V3.sql
    ```
 10. We now need to capture the filenames without their `.sql` extension and their versions. **Search for a way to read `for loop` variables without extensions and also how to substring variables.** **Set both the filename (without extension) and its current version to separate variables then echo them.** Your script should show below result. 
-   ```
-   b_V2
-   2
-   c_V3
-   3
-   ```
+    ```
+    b_V2
+    2
+    c_V3
+    3
+    ```
 11. Now that we've captured the current versions, we can now increment them to the next version. Try adding 1 to the current version when setting the version variable then verify. What you did will probably result to string concatenation instead of addition as below.
-   ```
-   b_V2
-   2 + 1
-   c_V3
-   3 + 1
-   ```
-   **Search for a way to make the `set` command treat the given variable value as an arithmetic expression and achieve below result.**
-   ```
-   b_V2
-   3
-   c_V3
-   4
-   ```
+    ```
+    b_V2
+    2 + 1
+    c_V3
+    3 + 1
+    ```
+    **Search for a way to make the `set` command treat the given variable value as an arithmetic expression and achieve below result.**
+    ```
+    b_V2
+    3
+    c_V3
+    4
+    ```
 12. **Remove the separate echos for filename and version** and **replace it with a single `echo`, displaying the concatenated filename substring, version, and extension** to achieve below result.
-   ```
-   b_V3.sql
-   c_V4.sql
-   ```
+    ```
+    b_V3.sql
+    c_V4.sql
+    ```
 13. Now that we have the next filename of the versioned `.sql` scripts, we should now rename them. **Search for a way to rename files using batch** and achieve below result.
-   
-   Terminal:   
-   ```
-   your-path\..\scripts>mybat
-   ```
-   scripts folder:
-   ```
-   a.sql
-   b_V3.sql
-   c_V4.sql
-   mybat.bat
-   ```
-   We have now incremented the versions of versioned scripts.
-14. Next, we'll now increment the version of non-versioned scripts _(a.sql)_. **Make a copy of the `for loop` for versioned scripts and apply necessary changes to make it filter files that does not match the given pattern and concatenate the filename and the version correctly.** Apply these changes and achieve below result. 
     
-   Terminal:
-   ```
-   your-path\..\scripts>mybat
-   ```
-   scripts folder:
-   ```
-   a_V2.sql
-   b_V4.sql
-   c_V5.sql
-   mybat.bat
-   ```
+    Terminal:   
+    ```
+    your-path\..\scripts>mybat
+    ```
+    scripts folder:
+    ```
+    a.sql
+    b_V3.sql
+    c_V4.sql
+    mybat.bat
+    ```
+    We have now incremented the versions of versioned scripts.
+14. Next, we'll now increment the version of non-versioned scripts _(a.sql)_. **Make a copy of the `for loop` for versioned scripts and apply necessary changes to make it filter files that does not match the given pattern and concatenate the filename and the version correctly.** Apply these changes and achieve below result. 
+     
+    Terminal:
+    ```
+    your-path\..\scripts>mybat
+    ```
+    scripts folder:
+    ```
+    a_V2.sql
+    b_V4.sql
+    c_V5.sql
+    mybat.bat
+    ```
 15. To make this script usable from anywhere in our PC, we should **place it in a folder and add that folder's path to the PATH environment variable**. In my case, I'll place it in `D:\custom-commands\`. After doing these steps, you should now be able to call your batch file from anywhere in your PC. 
